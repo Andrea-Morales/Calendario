@@ -80,7 +80,7 @@ public class CalendarioController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		mesLabel.textProperty().bindBidirectional(yearProperty, new NumberStringConverter());
+		mesLabel.textProperty().bindBidirectional(yearProperty, new NumberStringConverter("#"));
 		
 		eneroMonth.setMonthProperty(1);
 		febreroMonth.setMonthProperty(2);
