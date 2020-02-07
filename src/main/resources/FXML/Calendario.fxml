@@ -22,7 +22,7 @@
     <RowConstraints vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label fx:id="mesLabel" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+      <Label fx:id="yearLabel" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
       <Button mnemonicParsing="false" onAction="#onMenorButton" text="&lt;" GridPane.halignment="LEFT" />
       <Button mnemonicParsing="false" onAction="#onMayorButton" text="&gt;" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
       <MonthCalendar fx:id="eneroMonth" GridPane.rowIndex="1" />
