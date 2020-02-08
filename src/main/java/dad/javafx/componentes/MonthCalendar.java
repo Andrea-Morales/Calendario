@@ -19,8 +19,8 @@ public class MonthCalendar extends GridPane implements Initializable {
 	// Model
 	private IntegerProperty monthProperty = new SimpleIntegerProperty(1);
 	private IntegerProperty yearProperty = new SimpleIntegerProperty(2020);
-	private String[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
-			"Octubre", "Noviembre", "Diciembre" };
+	private String[] meses = { "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+			"octubre", "noviembre", "diciembre" };
 
 	// LaView
 
