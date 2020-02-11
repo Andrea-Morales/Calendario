@@ -19,11 +19,10 @@ public class MonthCalendar extends GridPane implements Initializable {
 	// Model
 	private IntegerProperty monthProperty = new SimpleIntegerProperty(1);
 	private IntegerProperty yearProperty = new SimpleIntegerProperty(2020);
-	private String[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
-			"Octubre", "Noviembre", "Diciembre" };
+	private String[] meses = { "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+			"octubre", "noviembre", "diciembre" };
 
 	// LaView
-
 	@FXML
 	private GridPane root;
 
@@ -157,6 +156,7 @@ public class MonthCalendar extends GridPane implements Initializable {
 	private Label seisDLabel;
 
 	
+	
 	private Label[] lista;	
 	
 	public MonthCalendar() throws IOException {
@@ -180,7 +180,11 @@ public class MonthCalendar extends GridPane implements Initializable {
 		rellenarDias();
 		monthProperty.addListener((o, ov, nv) -> rellenarDias());
 		yearProperty.addListener((o, ov, nv) -> rellenarDias());
+		
+		
+		
 	}
+
 
 	public void rellenarDias() {
 		monthLabel.setText(meses[monthProperty.get()-1]);
@@ -198,7 +202,14 @@ public class MonthCalendar extends GridPane implements Initializable {
 			
 			start++;
 		}
-	
+		
+		LocalDate todayDate = LocalDate.now();
+		if(todayDate.getYear()==yearProperty.get() && todayDate.getMonth().getValue() == monthProperty.get()) {
+			start = d.getDayOfWeek().getValue();
+			lista[start+todayDate.getDayOfMonth()-2].getStyleClass().add("today");
+					
+		}
+		
 	}
 
 

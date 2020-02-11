@@ -1,0 +1,19 @@
+.root{
+	-fx-backgroung-color:white;
+	-fx-font-family: "Courier New";
+	-fx-font-size: 11pt;
+	
+}
+
+.button{
+	-fx-effect:dropshadow(gaussian, black, 5, 0.1, 2, 2);
+}
+
+#yearLabel{
+	-fx-font-family: "Arial";
+	-fx-font-size: 22pt;
+	-fx-text-fill: white;
+	-fx-effect:dropshadow(gaussian, black, 10, 0.2, 2, 2);
+	-fx-font-weight: bold;
+}
+

@@ -2,6 +2,7 @@ package dad.javafx.calendar;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import dad.javafx.componentes.MonthCalendar;
@@ -18,14 +19,14 @@ import javafx.util.converter.NumberStringConverter;
 public class CalendarioController implements Initializable {
 
 	// Model
-	private IntegerProperty yearProperty = new SimpleIntegerProperty(2020);
+	private IntegerProperty yearProperty = new SimpleIntegerProperty(LocalDate.now().getYear());
 
 	// View
 	@FXML
 	private GridPane root;
 
 	@FXML
-	private Label mesLabel;
+	private Label yearLabel;
 
 	@FXML
 	private MonthCalendar eneroMonth;
@@ -80,7 +81,7 @@ public class CalendarioController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		mesLabel.textProperty().bindBidirectional(yearProperty, new NumberStringConverter("#"));
+		yearLabel.textProperty().bindBidirectional(yearProperty, new NumberStringConverter("#"));
 		
 		eneroMonth.setMonthProperty(1);
 		febreroMonth.setMonthProperty(2);
