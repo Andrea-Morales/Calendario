@@ -204,10 +204,16 @@ public class MonthCalendar extends GridPane implements Initializable {
 		}
 		
 		LocalDate todayDate = LocalDate.now();
-		if(todayDate.getYear()==yearProperty.get() && todayDate.getMonth().getValue() == monthProperty.get()) {
-			start = d.getDayOfWeek().getValue();
-			lista[start+todayDate.getDayOfMonth()-2].getStyleClass().add("today");
-					
+		if(todayDate.getMonth().getValue() == monthProperty.get()) {
+			if(todayDate.getYear()==yearProperty.get()) {
+				start = d.getDayOfWeek().getValue();
+				lista[start+todayDate.getDayOfMonth()-2].getStyleClass().add("today");//quitar del resto de meses
+						
+			}
+			else{
+				start = d.getDayOfWeek().getValue();
+				lista[start+todayDate.getDayOfMonth()-2].getStyleClass().remove("today");
+			}
 		}
 		
 	}
